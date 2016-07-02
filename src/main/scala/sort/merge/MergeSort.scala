@@ -51,6 +51,9 @@ object MergeSort {
 
       dos.writeInt(minElt)
     }
+
+    chunksReaders.foreach(_.close())
+
     dos.close()
 
     delete(tmpDirectoryPath)
