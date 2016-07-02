@@ -30,7 +30,7 @@ object MergeSort {
         writeIntsArrayToFile(getChunkFilePathByIndex(chunkIndex), chunkInts.sorted)
     }
 
-    val mergePortionPerChunk = chunkSize / chunksCount
+    val mergePortionPerChunk = Math.ceil(chunkSize / 10).toInt
 
     val chunksReaders = (0 until chunksCount).map(chunkIndex => {
       val tmpFileForChunkPath = getChunkFilePathByIndex(chunkIndex)
