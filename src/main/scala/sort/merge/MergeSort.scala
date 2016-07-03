@@ -27,7 +27,7 @@ object MergeSort {
     fileChunkedReader.chunksStream.foreach {
       case (chunkIndex, chunkInts) =>
         val tmpFileForChunkPath = getChunkFilePathByIndex(chunkIndex)
-        writeIntsArrayToFile(getChunkFilePathByIndex(chunkIndex), chunkInts.sorted)
+        writeIntsArrayToFile(tmpFileForChunkPath, chunkInts.sorted)
     }
 
     val mergePortionPerChunk = Math.ceil(chunkSize / 10).toInt
